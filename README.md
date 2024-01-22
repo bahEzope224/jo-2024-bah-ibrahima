@@ -38,15 +38,13 @@ Si vous souhaitez cloner ce projet localement pour contribuer ou l'utiliser, sui
 2. Utilisez la commande suivante pour cloner le projet depuis le dépôt GitHub :
 
     ```bash
-    git clone https://github.com/votre-utilisateur/projet-jo-2024.git
+    git clone https://github.com/bahEzope224/jo-2024-bah-ibrahima.git
     ```
-
-    Assurez-vous de remplacer `votre-utilisateur` par votre nom d'utilisateur GitHub.
 
 3. Accédez au répertoire du projet nouvellement créé :
 
     ```bash
-    cd projet-jo-2024
+   cd jo-2024-bah-ibrahima
     ```
 
 ## Configuration
@@ -59,7 +57,7 @@ Si vous souhaitez cloner ce projet localement pour contribuer ou l'utiliser, sui
 
 1. Démarrez votre serveur web (Apache, Nginx, etc.).
 2. Placez les fichiers du projet dans le répertoire racine du serveur web.
-3. Accédez au projet via votre navigateur (ex. http://localhost/projet-jo-2024).
+3. Accédez au projet via votre navigateur (ex. http://localhost).
 
 
 ## Licence
