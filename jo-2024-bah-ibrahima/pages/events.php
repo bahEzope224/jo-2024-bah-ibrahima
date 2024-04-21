@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="../css/styles-responsive.css">
     <link rel="shortcut icon" href="../img/favicon-jo-2024.ico" type="image/x-icon">
     <title>Calendrier des epreuves - Jeux Olympiques 2024</title>
+    <style>
+    padding-right: 20px;
+    </style>
 </head>
 
 <body>
