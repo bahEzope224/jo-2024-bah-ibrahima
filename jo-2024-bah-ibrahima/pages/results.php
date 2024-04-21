@@ -26,27 +26,43 @@
     </header>
     <main>
         <h1>Résultats des épreuves</h1>
+        <form action="results.php" method="GET">
+    <label for="search">Rechercher un resultat :</label>
+    <input type="text" id="search" name="search">
+    <button class="link-home" type="submit">Rechercher</button>
+</form>
+
         <?php
         require_once("../database/database.php");
 
         try {
             // Requête pour récupérer la liste des sports depuis la base de données
-            $query = "SELECT nom_athlete, prenom_athlete, nom_pays, nom_sport, nom_epreuve, resultat
-            FROM ATHLETE
-            INNER JOIN PAYS ON ATHLETE.id_pays = PAYS.id_pays
-            INNER JOIN PARTICIPER ON ATHLETE.id_athlete = PARTICIPER.id_athlete
-            INNER JOIN EPREUVE ON PARTICIPER.id_epreuve = EPREUVE.id_epreuve
-            INNER JOIN SPORT ON EPREUVE.id_sport = SPORT.id_sport
-            ORDER BY nom_athlete";
-            $statement = $connexion->prepare($query);
-            $statement->execute();
+           // Récupérer le terme de recherche s'il est fourni
+$searchTerm = isset($_GET['search']) ? $_GET['search'] : '';
 
+// Modifier la requête SQL pour prendre en compte le terme de recherche
+$query = "SELECT nom_athlete, prenom_athlete, nom_pays, nom_sport, nom_epreuve, resultat
+            FROM athlete
+            INNER JOIN pays ON athlete.id_pays = pays.id_pays
+            INNER JOIN participer ON athlete.id_athlete = participer.id_athlete
+            INNER JOIN epreuve ON participer.id_epreuve = epreuve.id_epreuve
+            INNER JOIN sport ON epreuve.id_sport = sport.id_sport
+            WHERE nom_athlete LIKE :searchTerm OR prenom_athlete LIKE :searchTerm
+            OR nom_pays LIKE :searchTerm OR nom_sport LIKE :searchTerm
+            OR nom_epreuve LIKE :searchTerm OR resultat LIKE :searchTerm
+            ORDER BY nom_athlete";
+
+$statement = $connexion->prepare($query);
+$statement->bindValue(':searchTerm', '%' . $searchTerm . '%', PDO::PARAM_STR);
+$statement->execute();
+
+            
             // Vérifier s'il y a des résultats
             if ($statement->rowCount() > 0) {
                 echo "<table>";
                 echo "<tr>
-                <th class='color'>Nom Athlète</th>
-                <th class='color'>Prénom Athlète</th>
+                <th class='color'>Nom </th>
+                <th class='color'>Prénom </th>
                 <th class='color'>Pays</th>
                 <th class='color'>Sport</th>
                 <th class='color'>Epreuves</th>
@@ -77,13 +93,12 @@
         error_reporting(E_ALL);
         ini_set("display_errors", 1);
         ?>
-        <p class="paragraph-link">
+         <p class="paragraph-link">
             <a class="link-home" href="../index.php">Retour Accueil</a>
         </p>
 
     </main>
     <footer>
-        
         <figure>
             <img src="../img/logo-jo-2024.png" alt="logo jeux olympiques 2024">
         </figure>
