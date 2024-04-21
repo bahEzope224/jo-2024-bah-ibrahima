@@ -31,7 +31,7 @@
 
         try {
             // Requête pour récupérer la liste des sports depuis la base de données
-            $query = "SELECT * FROM SPORT ORDER BY nom_sport";
+            $query = "SELECT * FROM sport ORDER BY nom_sport";
             $statement = $connexion->prepare($query);
             $statement->execute();
 
