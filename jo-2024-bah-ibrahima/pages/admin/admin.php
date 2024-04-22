@@ -34,13 +34,13 @@ ini_set("display_errors", 1);
             <!-- Menu vers les pages sports, events, et results -->
             <ul class="menu">
                 <li><a href="../admin/admin.php">Accueil Administration</a></li>
-                <li><a href="./admin-sports/manage-sports.php">Gestion Sports</a></li>
-                <li><a href="./admin-places/manage-places.php">Gestion Lieux</a></li>
-                <li><a href="./admin-events/manage-events.php">Gestion Calendrier</a></li>
-                <li><a href="./admin-countries/manage-countries.php">Gestion Pays</a></li>
-                <li><a href="./admin-gender/manage-genders.php">Gestion Genres</a></li>
-                <li><a href="./admin-athletes/manage-athletes.php">Gestion Athlètes</a></li>
-                <li><a href="./admin-results/manage-results.php">Gestion Résultats</a></li>
+                <li><a href="../admin/admin-sports/manage-sports.php">Gestion Sports</a></li>
+                <li><a href="../admin/admin-places/manage-places.php">Gestion Lieux</a></li>
+                <li><a href="../admin/admin-calendar/manage-events.php">Gestion Calendrier</a></li>
+                <li><a href="../admin/admin-pays/manage-contries.php">Gestion Pays</a></li>
+                <li><a href="../admin/admin-gender/manage-genders.php">Gestion Genres</a></li>
+                <li><a href="../admin/admin-athlete/manage-athletes.php">Gestion Athlètes</a></li>
+                <li><a href="../admin/admin-result/manage-results.php">Gestion Résultats</a></li>
                 <li><a href="../logout.php"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -61,14 +61,14 @@ ini_set("display_errors", 1);
             <?php echo htmlspecialchars($nom_utilisateur) . " " . htmlspecialchars($prenom_utilisateur) ?>
         </p>
         <p class="category-site">
-            <a class="link-category" href="./admin-users/manage-users.php">Gestion Administrateurs</a>
-            <a class="link-category" href="./admin-sports/manage-sports.php">Gestion Sports</a>
-            <a class="link-category" href="./admin-places/manage-places.php">Gestion Lieux</a>
-            <a class="link-category" href="./admin-events/manage-events.php">Gestion Calendrier</a>
-            <a class="link-category" href="./admin-countries/manage-countries.php">Gestion Pays</a>
-            <a class="link-category" href="./admin-gender/manage-genders.php">Gestion Genres</a>
-            <a class="link-category" href="./admin-athletes/manage-athletes.php">Gestion Athlètes</a>
-            <a class="link-category" href="./admin-results/manage-results.php">Gestion Résultats</a>
+            <a class="link-category" href="../admin/admin-users/manage-users.php">Gestion Administrateurs</a>
+            <a class="link-category" href="../admin/admin-sports/manage-sports.php">Gestion Sports</a>
+            <a class="link-category" href="../admin/admin-places/manage-places.php">Gestion Lieux</a>
+            <a class="link-category" href="../admin/admin-calendar/manage-events.php">Gestion Calendrier</a>
+            <a class="link-category" href="../admin/admin-pays/manage-contries.php">Gestion Pays</a>
+            <a class="link-category" href="../admin/admin-gender/manage-genders.php">Gestion Genres</a>
+            <a class="link-category" href="../admin/admin-athletes/manage-athletes.php">Gestion Athlètes</a>
+            <a class="link-category" href="../admin/admin-results/manage-results.php">Gestion Résultats</a>
         </p>
     </main>
     <footer>
